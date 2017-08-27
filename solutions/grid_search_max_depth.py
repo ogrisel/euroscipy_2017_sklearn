@@ -16,7 +16,6 @@ def plot_grid_scores(param_name, cv_result, ylim=(0, 1.1)):
     plt.scatter(param_values, test_scores_mean, marker='o', color="g",
                 label="Cross-validation scores")
     plt.legend(loc="best")
-    print("Best test score: {:.4f}".format(test_scores_mean[-1]))
-
+    print("Best test score: {:.4f}".format(np.max(test_scores_mean)))
 
 plot_grid_scores("max_depth", grid_search.cv_results_)
